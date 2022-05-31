@@ -1,0 +1,6 @@
+module Hex {
+  umbrella header "Hex-umbrella.h"
+
+  export *
+  module * { export * }
+}

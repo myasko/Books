@@ -1,0 +1,16 @@
+PODS:
+  - Hex (6.1.0)
+
+DEPENDENCIES:
+  - Hex
+
+SPEC REPOS:
+  trunk:
+    - Hex
+
+SPEC CHECKSUMS:
+  Hex: 2f67dd0cbb178cb24992e7529b025b8d16ff0bdc
+
+PODFILE CHECKSUM: 060fa1b8a55ff940de06d9c3cffc2eec2ccf44a5
+
+COCOAPODS: 1.11.2
