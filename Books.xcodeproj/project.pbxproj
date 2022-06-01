@@ -20,7 +20,7 @@
 		687507D528402CA300ABC95E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687507D428402CA300ABC95E /* SignUpViewController.swift */; };
 		688706D828404A3700CB5556 /* SelectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688706D728404A3700CB5556 /* SelectionDetailsViewController.swift */; };
 		688706FF28405F8500CB5556 /* coredata.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 688706FD28405F8500CB5556 /* coredata.xcdatamodeld */; };
-		6887070328429B0400CB5556 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6887070228429B0400CB5556 /* NetworkManager.swift */; };
+		6887070328429B0400CB5556 /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6887070228429B0400CB5556 /* BooksManager.swift */; };
 		688707052842A54200CB5556 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688707042842A54200CB5556 /* MainCollectionViewCell.swift */; };
 		6887070B28442C7F00CB5556 /* SelectionDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6887070A28442C7F00CB5556 /* SelectionDetailsPresenter.swift */; };
 		6887070D28442FFB00CB5556 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6887070C28442FFB00CB5556 /* HomePresenter.swift */; };
@@ -33,6 +33,7 @@
 		68A690FD2845385D00691E95 /* SelectionDetailsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A690FC2845385D00691E95 /* SelectionDetailsCollectionView.swift */; };
 		68A691002845419300691E95 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A690FF2845419300691E95 /* CartCollectionViewCell.swift */; };
 		68A6910228461E4C00691E95 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6910128461E4C00691E95 /* ProfilePresenter.swift */; };
+		68A691062846ABF600691E95 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A691052846ABF600691E95 /* NetworkManager.swift */; };
 		E26919774D6F8308C4FD91B2 /* libPods-Books.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B729FA6628A7F28B98089C /* libPods-Books.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +54,7 @@
 		687507D428402CA300ABC95E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		688706D728404A3700CB5556 /* SelectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDetailsViewController.swift; sourceTree = "<group>"; };
 		688706FE28405F8500CB5556 /* coredata.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coredata.xcdatamodel; sourceTree = "<group>"; };
-		6887070228429B0400CB5556 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6887070228429B0400CB5556 /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		688707042842A54200CB5556 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		6887070A28442C7F00CB5556 /* SelectionDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDetailsPresenter.swift; sourceTree = "<group>"; };
 		6887070C28442FFB00CB5556 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		68A690FC2845385D00691E95 /* SelectionDetailsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDetailsCollectionView.swift; sourceTree = "<group>"; };
 		68A690FF2845419300691E95 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		68A6910128461E4C00691E95 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		68A691052846ABF600691E95 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7DF05D201F33D5816595E765 /* Pods-Books.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books.debug.xcconfig"; path = "Target Support Files/Pods-Books/Pods-Books.debug.xcconfig"; sourceTree = "<group>"; };
 		C8EAD6F37055FBE0940380B4 /* Pods-Books.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Books.release.xcconfig"; path = "Target Support Files/Pods-Books/Pods-Books.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,8 +121,9 @@
 				688707102844439F00CB5556 /* BookDetailsPresenter.swift */,
 				683C767D2804A2A100C01636 /* Colors.swift */,
 				6887070928442C4F00CB5556 /* Models */,
-				6887070228429B0400CB5556 /* NetworkManager.swift */,
+				6887070228429B0400CB5556 /* BooksManager.swift */,
 				688706FD28405F8500CB5556 /* coredata.xcdatamodeld */,
+				68A691052846ABF600691E95 /* NetworkManager.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -296,7 +299,7 @@
 				6887070D28442FFB00CB5556 /* HomePresenter.swift in Sources */,
 				688706D828404A3700CB5556 /* SelectionDetailsViewController.swift in Sources */,
 				68A690FB28452C1E00691E95 /* SelectionCollectionViewCell.swift in Sources */,
-				6887070328429B0400CB5556 /* NetworkManager.swift in Sources */,
+				6887070328429B0400CB5556 /* BooksManager.swift in Sources */,
 				68A690F928451D0900691E95 /* CartPresenter.swift in Sources */,
 				688707052842A54200CB5556 /* MainCollectionViewCell.swift in Sources */,
 				6887070B28442C7F00CB5556 /* SelectionDetailsPresenter.swift in Sources */,
@@ -309,6 +312,7 @@
 				68A232972818416000DEC79E /* Selection.swift in Sources */,
 				68A232992818423400DEC79E /* Book.swift in Sources */,
 				68A690FD2845385D00691E95 /* SelectionDetailsCollectionView.swift in Sources */,
+				68A691062846ABF600691E95 /* NetworkManager.swift in Sources */,
 				687507D528402CA300ABC95E /* SignUpViewController.swift in Sources */,
 				683C7676280492B200C01636 /* HomeViewController.swift in Sources */,
 			);

@@ -50,8 +50,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         tabBar.viewControllers = [navHome, navComp, navBasket, navProfile]
         
-        let authVC = AuthorizationViewController()
-        navHome.pushViewController(authVC, animated: false)
+//        let authVC = AuthorizationViewController()
+//        navHome.pushViewController(authVC, animated: false)
         
         self.window = window
         window.makeKeyAndVisible()

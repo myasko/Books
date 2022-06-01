@@ -73,16 +73,17 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         
         selectionCollectionView.dataSource = self
         selectionCollectionView.delegate = self
-        
+       
         presenter = HomePresenter(view: self)
-        
         setUpUI()
+        self.presenter.setUpData()
+        presenter.output = self
+ 
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -142,7 +143,8 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
             selectionLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             selectionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
             
-            selectionCollectionView.heightAnchor.constraint(equalToConstant: CGFloat(Double(self.presenter.selections.count) * 200)),
+            selectionCollectionView.heightAnchor.constraint(equalToConstant: self.view.frame.height * 2),
+            //CGFloat(Double(self.presenter.selections.count) * 200)
             selectionCollectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             selectionCollectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5),
             selectionCollectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5),
@@ -161,6 +163,7 @@ extension HomeViewController: UICollectionViewDataSource & UICollectionViewDeleg
             return self.presenter.popularBooks.count
         }
         if collectionView == self.selectionCollectionView {
+            print(self.presenter.selections.count)
             return self.presenter.selections.count
         }
         
@@ -171,7 +174,7 @@ extension HomeViewController: UICollectionViewDataSource & UICollectionViewDeleg
         
         if collectionView == self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.name , for: indexPath) as! MainCollectionViewCell
-            cell.poster.image = UIImage(named: self.presenter.popularBooks[indexPath.row].poster)!
+            cell.poster.image = UIImage(named: "poster")
             return cell
         }
         
@@ -218,5 +221,22 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         }
         return CGSize(width: collectionView.frame.width - 10, height: height / 7)
     }
+    
+}
+
+extension HomeViewController: HomePresetnerOutput {
+    func success() {
+        DispatchQueue.main.async {
+            self.selectionCollectionView.reloadData()
+            self.collectionView.reloadData()
+        }
+        print("succ")
+        print(presenter.selections.count)
+    }
+    
+    func failure() {
+        print("hueta")
+    }
+    
     
 }
