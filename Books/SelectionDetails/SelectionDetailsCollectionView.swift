@@ -107,7 +107,6 @@ class SelectionDetailsCollectionView: UICollectionViewCell {
 
 extension SelectionDetailsViewController: UICollectionViewDataSource & UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
         return self.presenter.selection.books.count
     }
     
@@ -116,11 +115,11 @@ extension SelectionDetailsViewController: UICollectionViewDataSource & UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectionDetailsCollectionView.name , for: indexPath) as! SelectionDetailsCollectionView
         let book = presenter.selection.books[indexPath.row]
         
-        cell.poster.image = UIImage(named: book.poster)
-        cell.titleLabel.text = book.name
-        cell.authorLabel.text = book.author
-        cell.priceLabel.text = "\(book.price) Р"
-        cell.genreLabel.text = book.genre.first
+        cell.poster.image = UIImage(named: book.book_cover!)
+        cell.titleLabel.text = book.name!
+        cell.authorLabel.text = book.author!
+        cell.priceLabel.text = "\(book.price!) Р"
+        //cell.genreLabel.text = book.genre!.first
         
         return cell
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class BookDetailsViewController: UIViewController {
     var presenter: BookDetailsPresenter!
-    var book: BookDetails!
+    var book: Book!
     
     var poster: UIImageView = {
         let imgV = UIImageView()
@@ -81,6 +81,7 @@ class BookDetailsViewController: UIViewController {
     let addToSelectionButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("В подборку", for: .normal)
+        btn.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
         btn.titleLabel?.textColor = Colors.textColor
         btn.backgroundColor = Colors.bookDetailsButton
         btn.layer.cornerRadius = 15
@@ -88,13 +89,15 @@ class BookDetailsViewController: UIViewController {
         return btn
     }()
     
-    let addToCartButton: UIButton = {
+    var addToCartButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("В корзину", for: .normal)
         btn.titleLabel?.textColor = Colors.textColor
         btn.backgroundColor = Colors.bookDetailsButton
         btn.layer.cornerRadius = 15
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(addToCart), for: .touchUpInside)
+        btn.isEnabled = true
         return btn
     }()
     
@@ -123,7 +126,7 @@ class BookDetailsViewController: UIViewController {
         
         self.presenter = BookDetailsPresenter(view: self, book: book)
         
-        self.book = self.presenter.getBookDetails()
+        self.book = self.presenter.book
     }
     
     required init?(coder: NSCoder) {
@@ -171,12 +174,12 @@ class BookDetailsViewController: UIViewController {
     }
     
     private func setUpData() {
-        poster.image = UIImage(named: book.poster)
-        authorLabel.text = book.author
-        titleLabel.text = book.name
-        genreLabel.text = book.genre.first
-        priceLabel.text = "\(book.price) Р"
-        annotationLabel.text = book.annotation
+        poster.image = UIImage(named: book.book_cover!)
+        authorLabel.text = book.author!
+        titleLabel.text = book.name!
+        //genreLabel.text = book.genre.first
+        priceLabel.text = "\(book.price!) Р"
+        annotationLabel.text = book.annotation!
     }
     
 
@@ -247,4 +250,14 @@ class BookDetailsViewController: UIViewController {
         ])
         
     }
+}
+
+extension BookDetailsViewController {
+    
+    @objc func addToCart(sender: UIButton!) {
+        //UserDefaults.standard.set(self.book, forKey: "cart")
+        print("click")
+    }
+    
+    
 }

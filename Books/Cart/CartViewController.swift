@@ -193,11 +193,11 @@ extension CartViewController:  UICollectionViewDataSource & UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.name, for: indexPath) as! CartCollectionViewCell
-        cell.poster.image = UIImage(named: presenter.booksInCart[indexPath.row].poster)
-        cell.authorLabel.text = presenter.booksInCart[indexPath.row].author
-        cell.titleLabel.text = presenter.booksInCart[indexPath.row].name
-        cell.genreLabel.text = presenter.booksInCart[indexPath.row].genre.first
-        cell.priceLabel.text = "\(presenter.booksInCart[indexPath.row].price) Р"
+        cell.poster.image = UIImage(named: presenter.booksInCart[indexPath.row].book_cover!)
+        cell.authorLabel.text = presenter.booksInCart[indexPath.row].author!
+        cell.titleLabel.text = presenter.booksInCart[indexPath.row].name!
+        //cell.genreLabel.text = presenter.booksInCart[indexPath.row].genre!.first
+        cell.priceLabel.text = "\(presenter.booksInCart[indexPath.row].price!) Р"
         cell.removeBookButton.addTarget(self, action: #selector(removeBook), for: .touchUpInside)
         cell.removeBookButton.tag = indexPath.row
         return cell
